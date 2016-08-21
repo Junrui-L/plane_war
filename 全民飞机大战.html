@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>	全民打飞机</title>
+		<link rel="stylesheet" type="text/css" href="css/dafeiji.css"/>
+		<script src="js/common.js"></script>
+		<script src="js/gameEngine.js"></script>
+		<script src="js/Myplane.js"></script>
+		<script src="js/Bullet.js"></script>
+		<script src="js/Enemy.js"></script>
+		<script>
+			onload = function() {
+				var oList = document.getElementById("list");
+				var aLi = oList.getElementsByTagName("li");
+				
+				for (var i=0; i<aLi.length; i++) {
+					//点击事件
+					aLi[i].onclick = function() {
+						//游戏难度（子弹发射间隔）
+						var fireInterval = this.value;
+						
+						//清除ul
+						oList.parentNode.removeChild(oList);
+						
+						//游戏引擎
+						//主要控制游戏进度
+						//监听键盘：左,右
+						//碰撞检测：定时器一直检测（判断是否有子弹和敌机碰撞）
+						//创建敌机：随机创建
+						
+						//角色（对象/类）
+						//我的飞机：对象
+						//子弹：类（构造函数）
+						//敌机：类（构造函数）
+						
+						
+						//游戏难度（子弹发射间隔
+						var fireInterval = this.value;
+						
+						myPlane.fireInterval = fireInterval - 0;
+						
+						//开始游戏
+						gameEngine.init().start();
+					}
+				}
+				
+			}
+		</script>
+	</head>
+	<body>
+		<div id="body_main" class="main">
+			<ul id="list">
+				<li value="1000">超级困难</li>
+				<li value="300">非常困难</li>
+				<li value="150">比较困难</li>
+				<li value="100">春哥附体</li>
+			</ul>
+		</div>
+		
+	</body>
+</html>
